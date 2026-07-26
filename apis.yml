@@ -1,7 +1,24 @@
 aid: favstay
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/favstay.png
 name: FavStay
-description: FavStay is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: FavStay is a hotel and accommodation booking company in the travel and hospitality
+  sector, surfaced as a portfolio company of 500 Global and added to the API Evangelist network.
+  As of this enrichment pass the public site at favstay.com is offline (the host returns a Microsoft
+  Azure Web App 404 error and its TLS certificate does not match the domain), indicating the product
+  is defunct or the web presence has been retired. The domain still resolves with Google Workspace
+  email and an SPF record delegating to the Juniper (ejuniper.com) hospitality booking engine, but
+  no public developer surface, API documentation, or machine-readable specification could be found.
 url: https://raw.githubusercontent.com/api-evangelist/favstay/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +28,14 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
+- Travel
+- Hospitality
+- Hotels
+- Accommodation
+- Booking
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -21,5 +43,12 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/favstay-domain-security.yml
 - type: Website
   url: https://favstay.com
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
